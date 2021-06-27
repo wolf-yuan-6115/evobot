@@ -1,0 +1,24 @@
+name: Evobot CI
+
+on: push
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build Docker image
+        run: docker build . --tag evobot:latest
+      - name: Start docker image
+        run: docker start -it --rm evobot:latest node index.js
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+      - run: npm ci
+      - run: npm run build --if-present
+      - run: npm test
