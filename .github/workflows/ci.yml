@@ -10,7 +10,7 @@ jobs:
       - name: Build Docker image
         run: docker build . --tag evobot:latest
       - name: Start docker image
-        run: docker run --entrypoint "ls" --rm evobot:latest
+        run: docker run --entrypoint "bash ./util/test.sh" --rm evobot:latest
   build:
     runs-on: ubuntu-latest
     steps:
