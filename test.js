@@ -1,4 +1,5 @@
 const { readdirSync } = require("fs");
+const { join } = require("path");
 
 console.log("Testing commands...");
 
