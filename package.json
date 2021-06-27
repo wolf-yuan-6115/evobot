@@ -25,6 +25,7 @@
     "ytdl-core-discord": "^1.2.5"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "node test.js"
   }
 }
