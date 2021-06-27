@@ -16,8 +16,6 @@ jobs:
         with:
           push: false
           tags: evobot:latest
-      - name: Image digest
-        run: echo ${{ steps.docker_build.outputs.digest }}
       - uses: addnab/docker-run-action@v3
         with:
           image: evobot:latest
