@@ -10,7 +10,7 @@ jobs:
       - name: Build Docker image
         run: docker build . --tag evobot:latest
       - name: Start docker image
-        run: docker start -it --rm evobot:latest node index.js
+        run: docker run -it --rm evobot:latest node index.js
   build:
     runs-on: ubuntu-latest
     steps:
