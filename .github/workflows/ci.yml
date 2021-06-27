@@ -10,7 +10,7 @@ jobs:
       - name: Build Docker image
         run: docker build . --tag evobot:latest
       - name: Start docker image
-        run: docker run --rm evobot:latest --entrypoint bash util/test.sh
+        run: ls #docker run --rm evobot:latest --entrypoint bash util/test.sh
   build:
     runs-on: ubuntu-latest
     steps:
@@ -21,4 +21,4 @@ jobs:
           node-version: '14.x'
       - run: npm ci
       - run: npm run build --if-present
-      - run: bash test.sh
+      - run: bash util/test.sh
