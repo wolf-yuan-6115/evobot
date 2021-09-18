@@ -1,4 +1,6 @@
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/eritislami/evobot)
+![Node build](https://github.com/eritislami/evobot/actions/workflows/node.yml/badge.svg)
+![Docker build](https://github.com/eritislami/evobot/actions/workflows/docker.yml/badge.svg)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 ![logo](https://repository-images.githubusercontent.com/186841818/8aa95700-7730-11e9-84be-e80f28520325)
 
@@ -12,17 +14,15 @@
 2.1 **(Optional)** Soundcloud Client ID **[Guide](https://github.com/zackradisic/node-soundcloud-downloader#client-id)**
 3. Node.js v14.0.0 or newer
 
-## 🚀 Getting Started
+## 🚀 Getting Started 
 
-If deploying to Heroku make sure to create config variables
-
-```
+```sh
 git clone https://github.com/eritislami/evobot.git
 cd evobot
 npm install
 ```
 
-After installation finishes you can use `node index.js` to start the bot.
+After installation finishes follow configuration instructions then run `node index.js` to start the bot.
 
 ## ⚙️ Configuration
 
@@ -44,26 +44,13 @@ Copy or Rename `config.json.example` to `config.json` and fill out the values:
 }
 ```
 
-Currently available locales are:
-- English (en)
-- Arabic (ar)
-- Brazilian Portuguese (pt_br)
-- Dutch (nl)
-- French (fr)
-- German (de)
-- Italian (it)
-- Korean (ko)
-- Polish (pl)
-- Russian (ru)
-- Simplified Chinese (zh_cn)
-- Singaporean Mandarin (zh_sg)
-- Spanish (es)
-- Swedish (sv)
-- Traditional Chinese (zh_tw)
-- Thai (th)
-- Turkish (tr)
-- Vietnamese (vi)
-- Check [Contributing](#-contributing) if you wish to help add more languages!
+## 🐬 Docker Configuration
+
+For those who would prefer to use our [Docker container](https://hub.docker.com/repository/docker/eritislami/evobot), you may provide values from `config.json` as environment variables.
+
+```shell
+docker run -e "TOKEN=<discord-token>" -e "YOUTUBE_API_KEY=<youtube-key>" eritislami/evobot
+```
 
 ## 📝 Features & Commands
 
@@ -110,7 +97,7 @@ Examples: `1` or `1,2,3`
 * Remove song # from queue (/remove, /rm)
 * Play an mp3 clip (/clip song.mp3) (put the file in sounds folder)
 * List all clips (/clips)
-* Show api ping (/ping)
+* Show ping to Discord API (/ping)
 * Show bot uptime (/uptime)
 * Toggle pruning of bot messages (/pruning)
 * Help (/help, /h)
@@ -119,14 +106,39 @@ Examples: `1` or `1,2,3`
 
 ![reactions](https://i.imgur.com/9S7Omf9.png)
 
+## 🌎 Locales
+
+Currently available locales are:
+- English (en)
+- Arabic (ar)
+- Brazilian Portuguese (pt_br)
+- Dutch (nl)
+- French (fr)
+- German (de)
+- Italian (it)
+- Japanese (ja)
+- Korean (ko)
+- Polish (pl)
+- Russian (ru)
+- Simplified Chinese (zh_cn)
+- Singaporean Mandarin (zh_sg)
+- Spanish (es)
+- Swedish (sv)
+- Traditional Chinese (zh_tw)
+- Thai (th)
+- Turkish (tr)
+- Vietnamese (vi)
+- Check [Contributing](#-contributing) if you wish to help add more languages!
+
 ## 🤝 Contributing
 
 1. [Fork the repository](https://github.com/eritislami/evobot/fork)
 2. Clone your fork: `git clone https://github.com/your-username/evobot.git`
 3. Create your feature branch: `git checkout -b my-new-feature`
-4. Commit your changes: `git commit -am 'Add some feature'`
-5. Push to the branch: `git push origin my-new-feature`
-6. Submit a pull request
+4. Stage changes `git add .`
+5. Commit your changes: `cz` OR `npm run commit` do not use `git commit`
+6. Push to the branch: `git push origin my-new-feature`
+7. Submit a pull request
 
 ## 📝 Credits
 
